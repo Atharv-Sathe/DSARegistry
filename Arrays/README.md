@@ -7,3 +7,7 @@ Given an array arr of n elements that is first strictly increasing and then mayb
 decreasing, find the maximum element in the array.
 Note: If the array is increasing then just print the last element will be the maximum value.
 Expected Time Complexity: O(logn)
+
+### 2. Maximum Subarray
+**Link:** https://leetcode.com/problems/maximum-subarray/
+Given an integer array nums, find the subarray with the largest sum, and return its sum.
