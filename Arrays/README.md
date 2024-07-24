@@ -11,3 +11,7 @@ Expected Time Complexity: O(logn)
 ### 2. Maximum Subarray
 **Link:** https://leetcode.com/problems/maximum-subarray/
 Given an integer array nums, find the subarray with the largest sum, and return its sum.
+
+### 3. Maximum Product Subarray
+**Link:** https://leetcode.com/problems/maximum-product-subarray/
+Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.
