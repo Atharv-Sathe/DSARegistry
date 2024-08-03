@@ -29,9 +29,8 @@ int characterReplacement(string s, int k) {
         maxFreq = max(maxFreq, hash[s[r] - 'A']);
 
         if (( r - l + 1) - maxFreq > k) {
-            hash[s[l] - 'A']--; maxFreq = 0;
-            // for (int i = 0; i < 26; i++) maxFreq = max(maxFreq, hash[i]);
-            l += 1; 
+            hash[s[l] - 'A']--; maxFreq = 0; // Testing for next substring (Moving l forward by 1)
+            l += 1; // In a way restarting the prog with l += 1 this time.
         }
 
         if ((r - l + 1) - maxFreq <= k) maxLen = max(maxLen, r - l + 1);
@@ -44,10 +43,10 @@ int main() {
     
     string s;
     // s = "ABAB";
-    // s = "AABABBA";
+    s = "AABABBA";
     // s ="AAAB";
-    s = "ABBB";
-    int k = 2;
+    // s = "ABBB";
+    int k = 1;
     cout << characterReplacement(s, k) << endl;
 
     return 0;
