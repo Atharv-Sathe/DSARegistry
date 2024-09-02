@@ -15,3 +15,7 @@ Given an integer array nums, find the subarray with the largest sum, and return 
 ### 3. Maximum Product Subarray
 **Link:** https://leetcode.com/problems/maximum-product-subarray/
 Given an integer array nums, find the contiguous subarray within an array (containing at least one number) which has the largest product.
+
+### 4. Longest Subarray with Sum K
+**Link:** https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1
+Given an array containing N integers and an integer K. Your task is to find the length of the longest Sub-Array with the sum of the elements equal to the given value K.
