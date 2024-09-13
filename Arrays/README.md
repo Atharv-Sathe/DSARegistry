@@ -19,3 +19,7 @@ Given an integer array nums, find the contiguous subarray within an array (conta
 ### 4. Longest Subarray with Sum K
 **Link:** https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1
 Given an array containing N integers and an integer K. Your task is to find the length of the longest Sub-Array with the sum of the elements equal to the given value K.
+
+### 5. Next Permutation
+**Link:** https://leetcode.com/problems/next-permutation/
+Given an array of integers nums, find the next permutation of nums.
