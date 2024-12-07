@@ -1,3 +1,5 @@
+// Return the pointer which is the start of the cycle.
+
 #include <bits/stdc++.h>
 using namespace std;
 struct ListNode {
