@@ -31,12 +31,11 @@ ListNode *detectCycle(ListNode *head) {
                 slow = slow -> next;
             }
             return slow;
-        }
+        } 
     }
     return nullptr;
 }
 
 int main() {
-    
     return 0;
 }

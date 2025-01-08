@@ -40,7 +40,7 @@ void generateAllStrings(int k) {
   str[0] = '0';
   genAllStrWoutConsecOne(k, str, 1, count);
   
-  str[0] = '1';
+  str[0] = '1'; 
   genAllStrWoutConsecOne(k, str, 1, count);
   cout << "Total Strings Generated: " << count << endl;
   
