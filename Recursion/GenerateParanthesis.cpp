@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <vector>
+#include <string>
 using namespace std;
 
 vector<string> genParRec(int n, vector<string>& pat) {
