@@ -23,9 +23,16 @@ int minCoinsReq(int i, int sum, vector<int>& coins) {
   return min(take, noTake);
 }
 
+int minCoins(vector<int> &coins, int sum) {
+  // ios::sync_with_stdio(0);
+  // cin.tie(0);
+  int ans = minCoinsReq(0, sum, coins);
+  return ans != INT_MAX ? ans : -1;
+}
+
 int main() {
   vector<int> coins = {25, 10, 5};
   int target = 30;
-  cout << minCoinsReq(0, target, coins);
+  cout << minCoins(coins, target);
   return 0;
 }
