@@ -45,6 +45,9 @@ void getCountKSum(Node* root, int k, unordered_map<int, int>& map, int currSum, 
     currSum += root -> data;
     if (currSum == k) count++;
     
+    // There can be cases where sum till a certain node is 0, those cases will 
+    // also be counted when currSum == k, even when currSum == K will are still 
+    // checking if there is a case of 0 sum till a certain node and adding it.
     if (map.count(currSum - k)) count += map[currSum - k];
     
     map[currSum]++;
