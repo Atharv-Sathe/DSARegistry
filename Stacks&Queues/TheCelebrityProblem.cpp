@@ -3,6 +3,15 @@
 #include <stack>
 using namespace std;
 
+/*
+Given a square matrix mat[][] of size n x n, such that mat[i][j] = 1 means ith
+person knows jth person, the task is to find the celebrity. A celebrity is a 
+person who is known to all but does not know anyone. Return the index of the 
+celebrity, if there is no celebrity return -1.
+
+Note: Follow 0 based indexing and M[i][i] will always be 0.
+*/
+
 // Function to find if there is a celebrity in the party or not.
 int celebrity(vector<vector<int> >& mat) {
     // Iterate over each column O(n^2)
