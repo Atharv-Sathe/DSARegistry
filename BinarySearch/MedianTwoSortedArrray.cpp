@@ -9,10 +9,11 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
 
   // Choosing x numbers from the shorter array, always make nums1 shorter
   if (n2 < n1) {
-      swap(nums1, nums2);
-      swap(n1, n2); 
+      // swap(nums1, nums2);
+      // swap(n1, n2); 
+      return findMedianSortedArrays(nums2, nums1);
   }
-  int low = 0, high = min(countOnLeft, n1), mid1, l1, l2, r1, r2;
+  int low = max(0, countOnLeft - n2), high = min(countOnLeft, n1), mid1, l1, l2, r1, r2;
 
   while(low <= high) {
       mid1 = low + (high -  low) / 2;
