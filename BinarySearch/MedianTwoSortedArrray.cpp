@@ -2,6 +2,10 @@
 #include <vector>
 using namespace std;
 
+/*
+Give two sorted arrays find the median of the combined array.
+*/
+
 double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
   int n1 = nums1.size(), n2 = nums2.size();
 
