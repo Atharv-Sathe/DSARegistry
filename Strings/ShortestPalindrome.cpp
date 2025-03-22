@@ -1,6 +1,10 @@
 #include <iostream>
 using namespace std;
 
+/*
+You are given a string s. You can convert s to a palindrome by adding characters in front of it.
+Return the shortest palindrome you can find by performing this transformation.
+*/
 bool isPalindrome(string s) {
   int i = 0, j = s.length() - 1;
   while(i < j) {
