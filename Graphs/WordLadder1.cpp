@@ -3,6 +3,14 @@
 using namespace std;
 
 /*
+  NOTE : It is important to note that the solution below provides a way to solve the
+  question in three time complexities:
+  1. O(N^2 * M) : Use this when N is shorter than M
+  2. O(N * M^2) : Use this when M is shorter and < 26
+  3. O(N * M * 26) : Use this when M is > 26
+*/
+
+/*
 A transformation sequence from word beginWord to word endWord using a dictionary 
 wordList is a sequence of words beginWord -> s1 -> s2 -> ... -> sk such that:
 
@@ -77,7 +85,7 @@ int bfs(int start, int key, vector<vector<int>>& adj) {
 }
 
 // Less optimal approach: builds the full graph and runs BFS
-int lessOptimalButWorks(string& beginWord, string& endWord,
+int method1(string& beginWord, string& endWord,
                         vector<string>& wordList) {
   int start = 0;
   // Only add the begin word to wordList if not already there.
@@ -140,7 +148,7 @@ int bfsPatternBased(string& beginWord, string& endWord,
 }
 
 // Optimal approach: uses pattern mapping to reduce search space
-int optimal_aaha(string& beginWord, string& endWord, vector<string>& wordList) {
+int method2(string& beginWord, string& endWord, vector<string>& wordList) {
   unordered_set<string> wordSet(all(wordList));
   if (!wordSet.count(endWord)) return 0;
 
@@ -160,13 +168,46 @@ int optimal_aaha(string& beginWord, string& endWord, vector<string>& wordList) {
   return bfsPatternBased(beginWord, endWord, patternMap);
 }
 
+int method3(string& beginWord, string& endWord, vector<string>& wordList) {
+  unordered_set<string> wordSet(all(wordList));
+
+  queue<pair<string, int>> q;
+  q.push({beginWord, 1});
+  wordSet.erase(beginWord);
+
+  while(!q.empty()) {
+    auto [currentWord, step] = q.front();
+    q.pop();
+
+    if (currentWord == endWord) return step;
+
+    // Generate all possible patterns on fly by
+    for (size_t i = 0; i < currentWord.size(); i++) {
+      char original = currentWord[i];
+      for (char c = 'a'; c <= 'z'; c++) {
+        currentWord[i] = c;
+
+        if (wordSet.count(currentWord)) {
+          q.push({currentWord, step + 1});
+          wordSet.erase(currentWord);
+        }
+      }
+      currentWord[i] = original;
+    }
+  }
+  return 0;
+}
+
 // Main function to solve the Word Ladder problem
 int ladderLength(string beginWord, string endWord, vector<string>& wordList) {
   // TC : O(N^2 * M)
-  // return lessOptimalButWorks(beginWord, endWord, wordList);
+  // return method1(beginWord, endWord, wordList);
 
   // TC : O(N * M^2)
-  return optimal_aaha(beginWord, endWord, wordList);
+  // return method2(beginWord, endWord, wordList);
+
+  // TC: O(N * M * 26)
+  return method3(beginWord, endWord, wordList);
 }
 
 int main() { return 0; }
