@@ -27,7 +27,7 @@ void dfs(int i, vector<vector<int>> &adjList, vector<int> &used,
   }
 }
 
-// TC : (V)
+// TC : (V + E)
 vector<vector<int>> getComponents(int V, vector<vector<int>> &edges) {
   vector<vector<int>> adjList(V);
 
