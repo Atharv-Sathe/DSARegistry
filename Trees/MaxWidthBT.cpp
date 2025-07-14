@@ -1,6 +1,12 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
 /*
 Given the root of a binary tree, return the maximum width of the given tree.
 
