@@ -3,6 +3,10 @@
 #include <vector>
 using namespace std;
 
+/*
+  https://atcoder.jp/contests/dp/tasks/dp_d
+*/
+
 long long tabulation(vector<pair<int, int>>& items, int W) {
   int n = items.size();
   vector<long long> wt(W + 1, 0);
